@@ -54,11 +54,11 @@ export default function Staking_page() {
         <div className="row justify-content-center">
           <div className="col-md-7">
             <div className="main_box_staking">
-              <h1>$INQU STAKING</h1>
-              <p className="stk_para">Total in $INQU Staking</p>
+              <h1>$BFM STAKING</h1>
+              <p className="stk_para">Total in $BFM Staking</p>
               <p className="tota_de">
                 {" "}
-                <span className="fw-bold new_clr">{totalStaking} $INQU</span>
+                <span className="fw-bold new_clr">{totalStaking} $BFM</span>
               </p>
               {/* <h5>APY: 120%</h5> */}
               <Tab_stake Token_BalanceOF={Token_BalanceOF} />

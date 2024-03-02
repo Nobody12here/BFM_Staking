@@ -7,17 +7,27 @@
 .main_box_staking {
     border-radius: 15px;
     padding: 20px 30px;
-    border: 2px solid #6737EE;
-    background-color: rgb(23 23 23/1);
+   
+    background: linear-gradient(76.8deg, rgb(121, 45, 129) 3.6%, rgb(36, 31, 98) 90.4%);
+
     /* width: 50rem; */
 }
 
 .left_int_side {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     background-color: #208480;
     padding: 10px 30px;
     text-align: center;
     font-family: 'Space Grotesk', sans-serif;
     color: white !important;
+
+}
+.right_int_side{
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 
 }
 
@@ -84,11 +94,12 @@
 }
 
 .how_stkae {
-    color: #6737EE!important;
+    text-decoration: none;
+    color:#d1cfd7 !important
 }
 
 .new_clr {
-    color: #6737EE!important;
+    color: #f79b20!important;
 
 }
 
@@ -97,7 +108,7 @@
 
 
 .connnect_wallet_stk {
-    background-color: #6737EE;
+    background-color: #f79b20;
     height: 2.8em;
     border: none;
     border-radius: 20px;
@@ -114,7 +125,7 @@
 }
 
 .stkk_inpu {
-    background-color: #6737EE;
+    background-color: #ccab7f;
     padding: 10px 30px;
     border: none;
     color: rgb(229, 229, 229);
@@ -126,7 +137,7 @@
 
 
 .allowance_btn {
-    background-color: #6737EE;
+    background-color: #f79b20;
     padding: 10px 30px;
     width: 100%;
     display: flex;
@@ -141,7 +152,7 @@
 
 
 .stk_max {
-    background-color: #38A1E8;
+    background-color: rgba(247, 154, 32, 0);
     border: none;
     color: rgb(229, 229, 229);
     font-weight: 700;

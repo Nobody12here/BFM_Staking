@@ -34,8 +34,9 @@
 
 
 .main_header_btn{
-    background-color: #6737EE;
-    color: white;
+    border-radius: 20px;
+    background-color: rgba(247, 155, 32, 0.15);
+    color: rgb(247, 155, 32);
     font-weight: 600;
     font-family: 'Space Grotesk', sans-serif;
 border: none;

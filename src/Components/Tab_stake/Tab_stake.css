@@ -1,6 +1,6 @@
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
 
-    background-color: #6737EE!important;
+    background-color: #f79b20!important;
     border-radius: 20px !important;
     padding: 0px 30px;
     height: 1em !important;
@@ -68,7 +68,7 @@
 
 .left_int_side {
     padding: 10px 10px !important;
-    background-color: #38A1E8;
+    background-color: rgba(247, 155, 32, 0.15);
 
 
 
@@ -82,7 +82,7 @@
 
     .left_int_side {
         padding: 10px 10px !important;
-        background-color: #38A1E8;
+        background-color: rgba(247, 155, 32, 0.15);
 
     .MuiTableContainer-roots{
         width:50%;
@@ -114,6 +114,13 @@
         -webkit-transform: rotate(360deg);
         transform:rotate(360deg);
     }
+}
+#right_int_side{
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
 }
 
 .stke_planes {

@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { MdOutlineRestartAlt } from "react-icons/md";
 import "./Tab_stake.css";
+import InvestmentPlans from "../Plans/InvestmentPlans";
+import RewardSection from "../RewardSection/RewardSection";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import {
   prepareWriteContract,
@@ -100,7 +102,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
               setspinner(false);
             } else {
               setspinner(true);
-              let Token_Amout = getValue * 10**18;
+              let Token_Amout = getValue * 10 ** 18;
               Token_Amout = Token_Amout.toString();
               const { request } = await prepareWriteContract({
                 address: Staking_Token_Address,
@@ -163,19 +165,19 @@ export default function Tab_stake({ Token_BalanceOF }) {
       let contractOf = new webSupply.eth.Contract(Staking_ABI, Staking_Address);
 
       let minimumDeposit = await contractOf.methods.minimumDeposit().call();
-      minimumDeposit = minimumDeposit / 10**9;
+      minimumDeposit = minimumDeposit / 10 ** 9;
       minimumDeposit = minimumDeposit.toString();
       setminStake(minimumDeposit);
       if (address) {
         let Users = await contractOf.methods.Users(address).call();
-        
-        Users = Users.DepositeToken / 10**18;
+
+        Users = Users.DepositeToken / 10 ** 18;
         Users = Users.toString();
         setDepositeToken(Users);
         let pendindRewards = await contractOf.methods
           .pendindRewards(address)
           .call();
-        pendindRewards = pendindRewards / 10**18;
+        pendindRewards = pendindRewards / 10 ** 18;
         pendindRewards = pendindRewards.toString();
 
         settotalReward(parseFloat(pendindRewards).toFixed(2));
@@ -255,11 +257,11 @@ export default function Tab_stake({ Token_BalanceOF }) {
       let UserInformation = await stakingContractOf.methods
         .UserInformation(address)
         .call();
-      console.log("UserInformation", UserInformation);
+      console.log(Active);
       let array1 = UserInformation[0];
       let array2 = UserInformation[1];
       let array3 = UserInformation[2];
-      console.log(array3)
+      console.log(array3);
       let myArray = [];
       let currentTime = Math.floor(new Date().getTime() / 1000.0);
       for (let i = 0; i < array1.length; i++) {
@@ -267,9 +269,9 @@ export default function Tab_stake({ Token_BalanceOF }) {
         let date = moment(Number(array3[i]) * 1000).format("DD-MM-YYYY");
         let obj = {
           address: address,
-          amount: array1[i] / 10**18,
+          amount: array1[i] / 10 ** 18,
 
-          unLoackTime: Number(currentTimestamp) + Number(86400 ) * array2[i],
+          unLoackTime: Number(currentTimestamp) + Number(86400) * array2[i],
           LockTime: date,
         };
         myArray = [...myArray, obj];
@@ -341,7 +343,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
   return (
     <div>
       <div className="d-flex justify-content-center main_div_stking">
-        <Box className="ineerd" sx={{  }}>
+        <Box className="ineerd" sx={{}}>
           <div
             className=""
             style={{
@@ -378,14 +380,14 @@ export default function Tab_stake({ Token_BalanceOF }) {
                     </div>
                     <div>
                       <p className="ab_stk">
-                        My Balance: {Token_BalanceOF} $INQU
+                        My Balance: {Token_BalanceOF} $BFM
                       </p>
                     </div>
                   </div>
 
                   <div className="d-flex">
                     <div className="left_int_side">
-                      <p className="mb-0">$INQU</p>
+                      <p className="mb-0">$BFM</p>
                     </div>
                     <div className="text">
                       <input
@@ -400,6 +402,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
                     </div>
                     <div
                       className="left_int_side"
+                      id="right_int_side"
                       onClick={() =>
                         Token_BalanceOF == 0
                           ? setgetValue(0)
@@ -410,78 +413,17 @@ export default function Tab_stake({ Token_BalanceOF }) {
                     </div>
                   </div>
 
-                  <p className="clr_text">Min Stake Amount: {minStake} $INQU</p>
+                  <p className="clr_text">Min Stake Amount: {minStake} $BFM</p>
 
-                  <div className="row justify-content-center my-4">
-                    <div className="col-md-3 col-4 p-1">
-                      <div
-                        className="stke_planes"
-                        onClick={() => (setselectDays(14), setActive(4))}
-                        style={{
-                          background:
-                            Active == 4
-                              ? "linear-gradient(98.76deg, rgb(56, 195, 207) 0%, rgb(135, 103, 211) 100%)"
-                              : "transparent",
-                        }}
-                      >
-                        <button className="days_plan">14 days</button>
-                        <div className="about_plan">
-                          <p className="mb-0 Return_inner">10% Return</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3 col-4 p-1">
-                      <div
-                        className="stke_planes"
-                        onClick={() => (setselectDays(30), setActive(3))}
-                        style={{
-                          background:
-                            Active == 3
-                              ? "linear-gradient(98.76deg, rgb(56, 195, 207) 0%, rgb(135, 103, 211) 100%)"
-                              : "transparent",
-                        }}
-                      >
-                        <button className="days_plan">30 days</button>
-                        <div className="about_plan">
-                          <p className="mb-0 Return_inner">20% Return</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3 col-4 p-1">
-                      <div
-                        className="stke_planes"
-                        onClick={() => (setselectDays(60), setActive(2))}
-                        style={{
-                          background:
-                            Active == 2
-                              ? "linear-gradient(98.76deg, rgb(56, 195, 207) 0%, rgb(135, 103, 211) 100%)"
-                              : "transparent",
-                        }}
-                      >
-                        <button className="days_plan">60 days</button>
-                        <div className="about_plan">
-                          <p className="mb-0">30% Return</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3 col-4 p-1">
-                      <div
-                        className="stke_planes"
-                        onClick={() => (setselectDays(90), setActive(1))}
-                        style={{
-                          background:
-                            Active == 1
-                              ? "linear-gradient(98.76deg, rgb(56, 195, 207) 0%, rgb(135, 103, 211) 100%)"
-                              : "transparent",
-                        }}
-                      >
-                        <button className="days_plan">90 days</button>
-                        <div className="about_plan">
-                          <p className="mb-0">50% Return</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <InvestmentPlans
+                    active={Active}
+                    setSelectDays={(days) => {
+                      setselectDays(days);
+                    }}
+                    setActive={(active) => {
+                      setActive(active);
+                    }}
+                  ></InvestmentPlans>
 
                   <div>
                     <button className="allowance_btn mt-2" onClick={Stake}>
@@ -489,34 +431,13 @@ export default function Tab_stake({ Token_BalanceOF }) {
                     </button>
                   </div>
 
-                  <div className="">
-                    <p className="text-center clr_text rewards ">
-                      My Rewards{" "}
-                      <span
-                        className="mx-2"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => (Read_Fuc(), setspinner_Red(true))}
-                      >
-                        <MdOutlineRestartAlt
-                          className={spinner_Red ? "Icons_spinner" : ""}
-                        ></MdOutlineRestartAlt>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="d-flex justify-content-around mt-3">
-                    <div>
-                      <p className="ab_stk text-center ">Total Staked Amount</p>
-                      <p className="rewards clr_text text-center ">
-                        {DepositeToken} $INQU
-                      </p>
-                    </div>
-                    <div>
-                      <p className="ab_stk text-center">Total Rewards</p>
-                      <p className="rewards clr_text text-center">
-                        {totalReward} $INQU
-                      </p>
-                    </div>
-                  </div>
+                  <RewardSection
+                    Read_Fuc={Read_Fuc}
+                    spinner_Red={spinner_Red}
+                    setspinner_Red={setspinner_Red}
+                    DepositeToken={DepositeToken}
+                    totalReward={totalReward}
+                  ></RewardSection>
 
                   {/* <button className="re_inves mt-2" onClick={claim}>
                     {claim_Spinner ? "Loading..." : "CLAIM REWARDS"}{" "}
@@ -603,7 +524,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
               <>
                 <div className="d-flex justify-content-center">
                   <div>
-                    <p className="ab_stk">Staked $INQU: {DepositeToken} </p>
+                    <p className="ab_stk">Staked $BFM: {DepositeToken} </p>
                   </div>
                 </div>
                 <div className="container mx-auto   py-5">
@@ -652,7 +573,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
                         <table
                           className="MuiTable-root css-1owb465"
                           aria-label="simple table"
-                          style={{  }}
+                          style={{}}
                         >
                           <thead className="MuiTableHead-root css-1wbz3t9">
                             <tr className="MuiTableRow-root MuiTableRow-head css-1gqug66">
@@ -771,7 +692,7 @@ export default function Tab_stake({ Token_BalanceOF }) {
                                                   current_Time >=
                                                   items.unLoackTime
                                                     ? unstake_Token(index)
-                                                    :confirm(index)
+                                                    : confirm(index)
                                                 }
                                               >
                                                 {/* {
