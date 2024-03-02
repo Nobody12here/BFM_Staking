@@ -13,23 +13,12 @@ export default function Footer() {
           </div>
 
           <div className="col-md-3">
-            <a className="footer_links" href="https://docs.intelliquantcoin.com/" target="_blank">
-              <li>What is $INQU?</li>
-            </a>
-            <a className="footer_links" href="https://docs.intelliquantcoin.com/how-to-buy" target="_blank">
-              <li>How to Buy</li>
-            </a>
-            <a className="footer_links" href="https://docs.intelliquantcoin.com/roadmap" target="_blank">
-              <li>Roadmap</li>
-            </a>
-            <a className="footer_links" href="https://docs.intelliquantcoin.com/usdinqu-vs-competition" target="_blank">
-              <li>COMPARISONS</li>
-            </a>
+            
             {/* <a className="footer_links" href="">
               <li>Comparisons</li>
             </a> */}
-            <a className="footer_links" href="https://docs.intelliquantcoin.com/faq" target="_blank">
-              <li>FAQ</li>
+            <a className="footer_links" href="#" target="_blank">
+              
             </a>
           </div>
           {/* <div className="col-md-3">
@@ -49,18 +38,18 @@ export default function Footer() {
             {/* <p className="footer_links">98000 Monaco</p> */}
             {/* <p className="footer_links">contact@bitcoinbsc.io</p> */}
 
-            <div className="mt-5">
+            <div className="mt-1">
               {/* <p className="footer_links">BITCOIN ETH CORP</p> */}
               {/* <p className="footer_links">TVA: FR26337867214</p> */}
               <p className="footer_links d-flex ">
                 <span className="d-flex">
                   {" "}
-                <a href=" https://t.me/IntelliQuantOfficial/4" target="_blank">  <BsTelegram className="soical_icons"></BsTelegram></a>
+                <a href=" #" target="_blank">  <BsTelegram className="soical_icons"></BsTelegram></a>
                 </span>
                 <span className="mx-2 ">
                   {" "}
                   <span>
-                  <a href="https://twitter.com/IntelliQuant" target="_blank">
+                  <a href="#" target="_blank">
                     <svg
                       width="24"
                       height="20"
@@ -80,21 +69,13 @@ export default function Footer() {
                     </a>
                   </span>
                 </span>
-                © ∞ IntelliQuant - All Rights Reserved.
               </p>
             </div>
           </div>
         </div>
 
         <div className="row">
-          <div className="lower">
-            <p>
-              Disclaimer: Cryptocurrencies are volatile and could go down as
-              well as up in value. Profits may be subject to capital gains or
-              other taxes applicable in your jurisdiction. Always do your own
-              research and only invest what you can afford to lose.
-            </p>
-          </div>
+         
         </div>
       </div>
     </div>

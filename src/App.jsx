@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Staking_page from "./Components/Staking_page/Staking_page";
-import InvestmentPlans from "./Components/Plans/InvestmentPlans";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 

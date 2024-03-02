@@ -40,41 +40,13 @@ export default function Header() {
             id="responsive-navbar-nav"
             className={show ? "show" : ""}
           >
-            <Nav className="ms-auto">
-
-
-              <Nav.Link
-                className="headeder_links gap_stakw"
-                onClick={handleClose}
-              >
-           {/* <Link to="staking_page" className="headeder_links text-decoration-none">      Staking </Link> */}
-              </Nav.Link>
-
-                <a className="headeder_links" target="_blank" href="https://docs.intelliquantcoin.com/"  onClick={handleClose}>
-                What is $INQU?
-                </a>
-                <a className="headeder_links" href="https://docs.intelliquantcoin.com/how-to-buy" target="_blank" onClick={handleClose}>
-                How To Buy
-                </a>
-                <a className="headeder_links" href="https://docs.intelliquantcoin.com/roadmap" target="_blank" onClick={handleClose}>
-                Roadmap
-                </a>
-                {/* <NavDropdown.Divider /> */}
-                <a className="headeder_links" href="https://docs.intelliquantcoin.com/usdinqu-vs-competition" target="_blank" onClick={handleClose}>
-                Comparisons
-                </a>
-                <a className="headeder_links" href="https://docs.intelliquantcoin.com/faq"  target="_blank" onClick={handleClose}>
-                  FAQ
-                </a>
-              
-              {/* <Nav.Link href="#pricing" className="headeder_links" onClick={handleClose}>English</Nav.Link> */}
-            </Nav>
+            
             <Nav className="ms-auto d-flex  align-items-center gap-2">
-              <div className="social-icons d-flex gap-2 align-items center ">
-              <a href=" https://t.me/IntelliQuantOfficial/4" target="_blank">          <BsTelegram className="soical_icons"></BsTelegram></a>
+              <div className="social-icons d-flex gap-4 align-items center ">
+              <a href=" #" target="_blank">          <BsTelegram className="soical_icons"></BsTelegram></a>
                 {/* <BsTwitter className="soical_icons"></BsTwitter> */}
                 <span>
-                <a href="https://twitter.com/IntelliQuant" target="_blank">
+                <a href="#" target="_blank">
                   <svg
                     width="24"
                     height="20"
@@ -96,8 +68,8 @@ export default function Header() {
               </div>
               <div className="tree_btn d-flex gap-2">
                 <button className="main_header_btn">Audit</button>
-           <a href=" https://docs.intelliquantcoin.com/" target="_blank">     <button className="main_header_btn" style={{height:"100%"}}>Whitepaper</button></a>
-                <button className="main_header_btn">Stake  $INQU</button>
+           <a href=" #" target="_blank">     <button className="main_header_btn" style={{height:"100%"}}>Whitepaper</button></a>
+                <button className="main_header_btn">Stake  $BFM</button>
               </div>
             </Nav>
           </Navbar.Collapse>
